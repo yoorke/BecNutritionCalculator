@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Classes>
+  <Class>
+    <name>sirovina</name>
+    <get>sirovina_get</get>
+    <select>sirovina_select</select>
+    <getByTipSirovineID>sirovina_get_by_tip_sirovine_id</getByTipSirovineID>
+  </Class>
+  <Class>
+    <name>nutritivniElement</name>
+    <get>nutritivni_element_get</get>
+    <select>nutritivni_element_select</select>
+  </Class>
+  <Class>
+    <name>jm</name>
+    <get>jm_get</get>
+    <select>jm_select</select>
+  </Class>
+  <Class>
+    <name>tipsirovine</name>
+    <get>tip_sirovine_get</get>
+    <select>tip_sirovine_select</select>
+  </Class>
+  <Class>
+    <name>smesa</name>
+    <get>smesa_get</get>
+    <select>smesa_select</select>
+  </Class>
+  <Class>
+    <name>sirovinaNeVrednost</name>
+    <select>sirovina_ne_vrednost_select</select>
+  </Class>
+  <Class>
+    <name>nutritivnielementvrednost</name>
+    <getBySirovinaID>nutritivni_element_vrednost_get_by_sirovina_id</getBySirovinaID>
+    <getBySmesaID>nutritivni_element_vrednost_get_by_smesa_id</getBySmesaID>
+    <insert>nutritivni_element_insert</insert>
+    <update>nutritivni_element_update</update>
+  </Class>
+  <Class>
+    <name>sirovinaNutritivniElementVrednost</name>
+    <getBySirovinaID>sirovina_nutritivni_element_vrednost_get_by_sirovina_id</getBySirovinaID>
+    <update>sirovina_nutritivni_element_vrednost_update</update>
+  </Class>
+</Classes>
