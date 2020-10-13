@@ -1,0 +1,110 @@
+kalkulacija tabela
+kalkulacija_nutritivni_element tabela
+
+kalkulacijaView model
+kalkulacijaNE model
+
+kalkulacija_insert
+kalkulacija_update
+kalkulacija_select
+kalkulacija_get
+
+kalkulacija_nutritivni_element_insert
+kalkulacija_nutritivni_element_get_by_kalkulacija_id
+
+
+
+_finansijeDT
+SirovinaID	Naziv	JM	Kolicina	Cena	Ukupno
+
+_potrosnjaDT
+KategorijaID	KategorijaNaziv		Potrosnja na dnevnom nivou po zivotinji		Broj zivotinja	Dnevna potrosnja	Nedeljna potrosnja	Mesecna potrosnja	Godisnja potrosnja
+
+onDodaj
+
+sirovinaCenaDT
+finansijeDT
+tab
+Validating
+sirovina keypress
+
+
+--save i load kalkulacije
+--sirovinaCena
+--tab kalkulacija i finansije
+--potrosnja i finansije
+--validacija kolicine
+--sirovina keypress
+--sakrij amk
+--obrisi
+
+--double buffer
+--unos nove smese
+--export
+--izracunavanje amk
+--fitaza
+--prikazati jm u nevCalculator
+--azuriranje kalkulacija
+smesa napomena
+--sirovina_cena save
+--sirovina active
+users
+log
+potrosnja po sirovinama za vise smesa u periodu
+
+_sirovinaCenaDT
+SirovinaID	Naziv	Jm	Kolicina	Cena	Ukupno
+
+zahtevano = 177 mg/kg
+ukupno = 69.82 mg/kg
+amk = zahtevano - ukupno = 107.18 mg/kg
+
+fe = 29.3%
+
+10g = 2.93g / 100 = 0.0293 g/kg * 1000 = 29.3 mg/kg
+
+ukupno = kolicina * (proc / 100) * 1000 / total
+
+ukupno * total = kolicina * (proc / 100) * 1000
+
+kolicina = ukupno * total / ((proc / 100) * 1000)
+kolicina = 107.18 * 100 / ((29.3 / 100) * 1000) = 36.58
+
+lyz = 78%
+10g = 7.8g / 1000 = 0.0078 kg
+ukupno = kolicina * (proc / 100) / 1000
+ukupno * 1000 = kolicina * (proc / 100)
+kolicina * proc = ukupno * 1000 * 100
+kolicina = ukupno * 1000 * 100 / proc
+1-1
+
+Va = 1 000 000 IJ/g	IJ/kg
+0.79g = 0.79 * 1 000 000 IJ/g / 100kg = 7900
+ukupno = kolicina * proc / 100
+ukupno * 100 = kolicina * proc
+kolicina = ukupno * 100 / proc
+4-4
+
+Vc = 100%
+ukupno = kolicina * (proc / 100) * 1000 / total
+ukupno * total = kolicina * (proc / 100) * 1000
+ukupno * total / 1000 = kolicina * (proc / 100)
+ukupno * total / 1000 * 100 = kolicina * proc
+ukupno * total / 1000 * 100 / proc = kolicina
+kolicina = ukupno * total / 1000 * 100 / proc
+1-3 %-mg/kg
+
+ukupno = kolicina * proc / total / jmIndex
+ukupno * total * jmIndex = kolicina * proc
+kolicina = ukupno * total * jmIndex / proc
+3-3 mg/kg-mg/kg
+
+1-7 %-ug/kg
+ukupno = kolicina * proc / 100 * 1000 * 1000 / total
+ukupno * total = kolicina * proc / 100 * 1000 * 1000
+ukupno * total * 100 = kolicina * proc * 1000 * 1000
+kolicina = ukupno * total * 100 / proc / 1000 / 1000
+
+NutritivniElementVrednostKalkulacija
+NevCalculator
+CalculatorNev

@@ -40,6 +40,9 @@
     <Reference Include="Base.Models">
       <HintPath>..\..\..\WebSajtovi\Framework2.0 dll\Base.Models.dll</HintPath>
     </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.11.3.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.11.3\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,15 +50,22 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ICalculatorBL.cs" />
+    <Compile Include="IExportBL.cs" />
     <Compile Include="IJmBL.cs" />
+    <Compile Include="IKalkulacijaBL.cs" />
+    <Compile Include="IKalkulacijaViewBL.cs" />
+    <Compile Include="IKategorijaZivotinjaBL.cs" />
+    <Compile Include="IKategorijaZivotinjaSmesaPotrosnjaBL.cs" />
     <Compile Include="INutritivniElementBL.cs" />
     <Compile Include="INutritivniElementVrednostBL.cs" />
     <Compile Include="ISirovinaBL.cs" />
     <Compile Include="ISirovinaNutritivniElementVrednostBL.cs" />
     <Compile Include="ISmesaBL.cs" />
+    <Compile Include="ISmesaNutritivniElementVrednostBL.cs" />
     <Compile Include="ITipSirovineBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +74,9 @@
       <Project>{c49c0fc5-4db8-4a5a-b25d-d36c29d15ea4}</Project>
       <Name>BecNutritionCalculator.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

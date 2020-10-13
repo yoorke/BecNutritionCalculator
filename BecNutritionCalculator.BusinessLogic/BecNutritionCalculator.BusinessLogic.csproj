@@ -43,6 +43,10 @@
     <Reference Include="Base.Models">
       <HintPath>..\..\..\WebSajtovi\Framework2.0 dll\Base.Models.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DocumentFormat.OpenXml, Version=2.11.3.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.11.3\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="GenericBE">
       <HintPath>..\..\..\WebSajtovi\Framework2.0 dll\GenericBE.dll</HintPath>
     </Reference>
@@ -56,16 +60,24 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculatorBL.cs" />
+    <Compile Include="ExportBL.cs" />
     <Compile Include="JmBL.cs" />
+    <Compile Include="KalkulacijaBL.cs" />
+    <Compile Include="KalkulacijaViewBL.cs" />
+    <Compile Include="KategorijaZivotinjaBL.cs" />
+    <Compile Include="KategorijaZivotinjaSmesaPotrosnjaBL.cs" />
     <Compile Include="NutritivniElementBL.cs" />
     <Compile Include="NutritivniElementVrednostBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportBL.cs" />
     <Compile Include="SirovinaBL.cs" />
     <Compile Include="SirovinaNutritivniElementVrednostBL.cs" />
     <Compile Include="SmesaBL.cs" />
+    <Compile Include="SmesaNutritivniElementVrednostBL.cs" />
     <Compile Include="TipSirovineBL.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +89,9 @@
       <Project>{c49c0fc5-4db8-4a5a-b25d-d36c29d15ea4}</Project>
       <Name>BecNutritionCalculator.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

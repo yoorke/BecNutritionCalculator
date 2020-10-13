@@ -48,7 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExportModel.cs" />
     <Compile Include="Jm.cs" />
+    <Compile Include="Kalkulacija.cs" />
+    <Compile Include="KalkulacijaSirovinaVrednost.cs" />
+    <Compile Include="KalkulacijaView.cs" />
+    <Compile Include="KategorijaZivotinja.cs" />
+    <Compile Include="KategorijaZivotinjaSmesa.cs" />
+    <Compile Include="KategorijaZivotinjaSmesaPotrosnja.cs" />
     <Compile Include="NutritivniElement.cs" />
     <Compile Include="NutritivniElementVrednost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -56,6 +63,7 @@
     <Compile Include="SirovinaNeVrednost.cs" />
     <Compile Include="SirovinaNutritivniElementVrednost.cs" />
     <Compile Include="Smesa.cs" />
+    <Compile Include="SmesaNutritivniElementVrednost.cs" />
     <Compile Include="TipSirovine.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

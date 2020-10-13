@@ -36,5 +36,15 @@ namespace BecNutritionCalculator.BusinessLogic
 
             _repository.GetByParameter("update", parameters);
         }
+
+        public void SaveVrednost(SirovinaNutritivniElementVrednost sirovinaNutritivniElementVrednost)
+        {
+            List<QueryParameter> parameters = new List<QueryParameter>();
+            parameters.Add(new QueryParameter("sirovina_id", sirovinaNutritivniElementVrednost.SirovinaID));
+            parameters.Add(new QueryParameter("nutritivni_element_id", sirovinaNutritivniElementVrednost.NutritivniElementID));
+            parameters.Add(new QueryParameter("vrednost", sirovinaNutritivniElementVrednost.Vrednost));
+
+            _repository.GetByParameter("save", parameters);
+        }
     }
 }

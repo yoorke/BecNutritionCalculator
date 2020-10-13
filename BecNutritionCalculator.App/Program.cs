@@ -36,6 +36,17 @@ namespace BecNutritionCalculator.App
             container.RegisterType<IJmBL, JmBL>(new ContainerControlledLifetimeManager());
             container.RegisterType<ISirovinaNutritivniElementVrednostBL, SirovinaNutritivniElementVrednostBL>(new ContainerControlledLifetimeManager());
             container.RegisterType<IGenericRepository<SirovinaNutritivniElementVrednost>, GenericRepository<SirovinaNutritivniElementVrednost>>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IGenericRepository<Kalkulacija>, GenericRepository<Kalkulacija>>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IKalkulacijaBL, KalkulacijaBL>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IGenericRepository<KalkulacijaView>, GenericRepository<KalkulacijaView>>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IKalkulacijaViewBL, KalkulacijaViewBL>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IGenericRepository<KategorijaZivotinjaSmesaPotrosnja>, GenericRepository<KategorijaZivotinjaSmesaPotrosnja>>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IKategorijaZivotinjaSmesaPotrosnjaBL, KategorijaZivotinjaSmesaPotrosnjaBL>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IExportBL, ExportBL>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IGenericRepository<SmesaNutritivniElementVrednost>, GenericRepository<SmesaNutritivniElementVrednost>>(new ContainerControlledLifetimeManager());
+            container.RegisterType<ISmesaNutritivniElementVrednostBL, SmesaNutritivniElementVrednostBL>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IKategorijaZivotinjaBL, KategorijaZivotinjaBL>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IGenericRepository<KategorijaZivotinja>, GenericRepository<KategorijaZivotinja>>(new ContainerControlledLifetimeManager());
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

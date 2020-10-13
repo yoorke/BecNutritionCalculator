@@ -5,6 +5,11 @@
     <get>sirovina_get</get>
     <select>sirovina_select</select>
     <getByTipSirovineID>sirovina_get_by_tip_sirovine_id</getByTipSirovineID>
+    <insert>sirovina_insert</insert>
+    <update>sirovina_update</update>
+    <getByTipSirovineCode>sirovina_get_by_tip_sirovine_code</getByTipSirovineCode>
+    <getByNutritivniElementNaziv>sirovina_get_by_nutritivni_element_naziv</getByNutritivniElementNaziv>
+    <getPotrosnjaUPeriodu>sirovina_get_potrosnja_u_periodu</getPotrosnjaUPeriodu>
   </Class>
   <Class>
     <name>nutritivniElement</name>
@@ -25,6 +30,8 @@
     <name>smesa</name>
     <get>smesa_get</get>
     <select>smesa_select</select>
+    <update>smesa_update</update>
+    <insert>smesa_insert</insert>
   </Class>
   <Class>
     <name>sirovinaNeVrednost</name>
@@ -41,5 +48,44 @@
     <name>sirovinaNutritivniElementVrednost</name>
     <getBySirovinaID>sirovina_nutritivni_element_vrednost_get_by_sirovina_id</getBySirovinaID>
     <update>sirovina_nutritivni_element_vrednost_update</update>
+    <save>sirovina_nutritivni_element_vrednost_save</save>
+  </Class>
+  <Class>
+    <name>kalkulacija</name>
+    <insert>kalkulacija_insert</insert>
+    <update>kalkulacija_update</update>
+    <select>kalkulacija_select</select>
+    <delete>kalkulacija_delete</delete>
+    <get>kalkulacija_get</get>
+    <getTroskovi>kalkulacija_troskovi_get</getTroskovi>
+    <getPotrosnja>kalkulacija_potrosnja_get</getPotrosnja>
+  </Class>
+  <Class>
+    <name>kalkulacijaSirovinaVrednost</name>
+    <insert>kalkulacija_sirovina_vrednost_insert</insert>
+    <update>kalkulacija_sirovina_vrednost_update</update>
+    <select>kalkulacija_sirovina_vrednost_select</select>
+    <delete>kalkulacija_sirovina_vrednost_delete</delete>
+    <getByKalkulacijaID>kalkulacija_sirovina_vrednost_get_by_kalkulacija_id</getByKalkulacijaID>
+  </Class>
+  <Class>
+    <name>kalkulacijaView</name>
+    <get>kalkulacija_view_get</get>
+  </Class>
+  <Class>
+    <name>kategorijaZivotinjaSmesaPotrosnja</name>
+    <getBySmesaID>kategorija_zivotinja_smesa_potrosnja_get_by_smesa_id</getBySmesaID>
+    <getByKategorijaZivotinjaID>kategorija_zivotinja_smesa_potrosnja_get_by_kategorija_zivotinja_id</getByKategorijaZivotinjaID>
+    <save>kategorija_zivotinja_smesa_potrosnja_save</save>
+  </Class>
+  <Class>
+    <name>smesaNutritivniElementVrednost</name>
+    <getBySmesaID>smesa_nutritivni_element_vrednost_get_by_smesa_id</getBySmesaID>
+    <save>smesa_nutritivni_element_vrednost_save</save>
+  </Class>
+  <Class>
+    <name>kategorijaZivotinja</name>
+    <get>kategorija_zivotinja_get</get>
+    <insert>kategorija_zivotinja_save</insert>
   </Class>
 </Classes>

@@ -12,6 +12,8 @@ using System.Windows.Forms;
 
 namespace BecNutritionCalculator.App
 {
+    public delegate void SirovinaSavedHandler();
+
     public partial class SirovinaForm : Form
     {
         private int _sirovinaID = -1;
@@ -20,6 +22,8 @@ namespace BecNutritionCalculator.App
         private ITipSirovineBL _tipSirovineBL;
         private IJmBL _jmBL;
         private IEnumerable<SirovinaNutritivniElementVrednost> _nutritivniElementiVrednosti;
+
+        public event SirovinaSavedHandler SirovinaSaved;
 
         public SirovinaForm(int sirovinaID, ISirovinaBL sirovinaBL, ISirovinaNutritivniElementVrednostBL sirovinaNutritivniElementiBL, ITipSirovineBL tipSirovineBL, IJmBL jmBL)
         {
@@ -48,6 +52,9 @@ namespace BecNutritionCalculator.App
             txtNaziv.Text = sirovina.Naziv;
             cmbTipSirovine.SelectedValue = sirovina.TipSirovineID;
             cmbJm.SelectedValue = sirovina.JmID;
+            txtKolicinskiOdnos.Text = sirovina.KolicinskiOdnos.ToString();
+            txtCena.Text = string.Format("{0:N2}", sirovina.Cena);
+            chkIsActive.Checked = sirovina.is_active;
 
             
             _nutritivniElementiVrednosti = _sirovinaNutritivniElementVrednostBL.GetBySirovinaID(_sirovinaID);
@@ -98,19 +105,83 @@ namespace BecNutritionCalculator.App
 
         private void btnSacuvaj_Click(object sender, EventArgs e)
         {
-            foreach(DataRow row in dgvVrednosti.Rows)
-            {
-                if(decimal.Parse(row["Vrednost"].ToString()) != decimal.Parse(row["StaraVrednost"].ToString()))
-                    _sirovinaNutritivniElementVrednostBL.UpdateVrednost(new SirovinaNutritivniElementVrednost()
-                    {
-                        SirovinaID = _sirovinaID,
-                        NutritivniElementID = int.Parse(row["NutritivniElementID"].ToString()),
-                        Naziv = row["Naziv"].ToString(),
-                        //SkraceniNaziv = row["SkraceniNaziv"].ToString(),
-                        Vrednost = decimal.Parse(row["Vrednost"].ToString())
-                    }
-                    );
+            //if (_sirovinaID == -1)
+                _sirovinaID = saveSirovina();
+
+            if(_sirovinaID > 0)
+            { 
+                foreach (DataGridViewRow row in dgvVrednosti.Rows)
+                {
+                    if(decimal.Parse(row.Cells["Vrednost"].Value.ToString()) != decimal.Parse(row.Cells["StaraVrednost"].Value.ToString()))
+                        _sirovinaNutritivniElementVrednostBL.SaveVrednost(new SirovinaNutritivniElementVrednost()
+                        {
+                            SirovinaID = _sirovinaID,
+                            NutritivniElementID = int.Parse(row.Cells["NutritivniElementID"].Value.ToString()),
+                            Naziv = row.Cells["Naziv"].Value.ToString(),
+                            //SkraceniNaziv = row["SkraceniNaziv"].ToString(),
+                            Vrednost = decimal.Parse(row.Cells["Vrednost"].Value.ToString())
+                        }
+                        );
+                }
+
+                if (SirovinaSaved != null)
+                    SirovinaSaved();
+
+                MessageBox.Show("Sirovina uspešno sačuvana.", "Unos sirovine", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Close();
             }
+        }
+
+        private int saveSirovina()
+        {
+            try
+            { 
+                Sirovina sirovina = new Sirovina();
+                sirovina.Naziv = txtNaziv.Text;
+                sirovina.TipSirovineID = int.Parse(cmbTipSirovine.SelectedValue.ToString());
+                sirovina.JmID = int.Parse(cmbJm.SelectedValue.ToString());
+                sirovina.ID = _sirovinaID;
+                sirovina.KolicinskiOdnos = decimal.Parse(txtKolicinskiOdnos.Text);
+                sirovina.Cena = decimal.Parse(txtCena.Text);
+                sirovina.is_active = chkIsActive.Checked;
+
+                return _sirovinaBL.Save(sirovina);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Proverite unete podatke." + ex.Message);
+                return -1;
+            }
+        }
+
+        private void reset()
+        {
+            txtNaziv.Text = string.Empty;
+            cmbTipSirovine.SelectedIndex = -1;
+            cmbJm.SelectedIndex = -1;
+            _sirovinaID = -1;
+            txtKolicinskiOdnos.Text = "1";
+
+
+            _nutritivniElementiVrednosti = _sirovinaNutritivniElementVrednostBL.GetBySirovinaID(1);
+            foreach (DataGridViewRow row in dgvVrednosti.Rows) { 
+                row.Cells["Vrednost"].Value = decimal.Parse("0");
+                row.Cells["StaraVrednost"].Value = decimal.Parse("-1");
+            }
+
+
+            txtNaziv.Select();
+        }
+
+        private void btnNovaSirovina_Click(object sender, EventArgs e)
+        {
+            reset();
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            reset();
         }
     }
 }

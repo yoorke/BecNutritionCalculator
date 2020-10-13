@@ -12,5 +12,6 @@ namespace BecNutritionCalculator.BusinessLogic.Interfaces
     {
         IEnumerable<SirovinaNutritivniElementVrednost> GetBySirovinaID(int sirovinaID);
         void UpdateVrednost(SirovinaNutritivniElementVrednost sirovinaNutritivniElementVrednost);
+        void SaveVrednost(SirovinaNutritivniElementVrednost sirovinaNutritivniElementVrednost);
     }
 }

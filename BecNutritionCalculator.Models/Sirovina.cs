@@ -21,5 +21,11 @@ namespace BecNutritionCalculator.Models
 
         [SqlFieldNameAttribute("jm_naziv")]
         public string JmNaziv { get; set; }
+
+        [SqlFieldNameAttribute("cena")]
+        public decimal Cena { get; set; }
+
+        [SqlFieldNameAttribute("kolicinski_odnos")]
+        public decimal KolicinskiOdnos { get; set; }
     }
 }

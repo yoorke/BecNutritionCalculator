@@ -28,22 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SirovinaForm));
             this.label1 = new System.Windows.Forms.Label();
             this.txtNaziv = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTipSirovine = new System.Windows.Forms.ComboBox();
             this.cmbJm = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCena = new System.Windows.Forms.TextBox();
+            this.txtKolicinskiOdnos = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnNovaSirovina = new System.Windows.Forms.Button();
             this.btnOdustani = new System.Windows.Forms.Button();
             this.btnSacuvaj = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvVrednosti = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btnNew = new System.Windows.Forms.ToolStripButton();
+            this.chkIsActive = new System.Windows.Forms.CheckBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVrednosti)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -89,6 +99,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chkIsActive);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.txtCena);
+            this.groupBox2.Controls.Add(this.txtKolicinskiOdnos);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.cmbJm);
@@ -96,12 +111,44 @@
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.cmbTipSirovine);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
+            this.groupBox2.Location = new System.Drawing.Point(0, 25);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(663, 138);
+            this.groupBox2.Size = new System.Drawing.Size(584, 138);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Osnovni podaci";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(391, 67);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Cena:";
+            // 
+            // txtCena
+            // 
+            this.txtCena.Location = new System.Drawing.Point(432, 64);
+            this.txtCena.Name = "txtCena";
+            this.txtCena.Size = new System.Drawing.Size(100, 20);
+            this.txtCena.TabIndex = 9;
+            // 
+            // txtKolicinskiOdnos
+            // 
+            this.txtKolicinskiOdnos.Location = new System.Drawing.Point(432, 31);
+            this.txtKolicinskiOdnos.Name = "txtKolicinskiOdnos";
+            this.txtKolicinskiOdnos.Size = new System.Drawing.Size(100, 20);
+            this.txtKolicinskiOdnos.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(369, 34);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 13);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Kol odnos:";
             // 
             // label3
             // 
@@ -114,20 +161,32 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnNovaSirovina);
             this.groupBox1.Controls.Add(this.btnOdustani);
             this.groupBox1.Controls.Add(this.btnSacuvaj);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Location = new System.Drawing.Point(0, 446);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(663, 63);
+            this.groupBox1.Size = new System.Drawing.Size(584, 63);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
+            // btnNovaSirovina
+            // 
+            this.btnNovaSirovina.Location = new System.Drawing.Point(211, 19);
+            this.btnNovaSirovina.Name = "btnNovaSirovina";
+            this.btnNovaSirovina.Size = new System.Drawing.Size(99, 23);
+            this.btnNovaSirovina.TabIndex = 2;
+            this.btnNovaSirovina.Text = "Nova sirovina";
+            this.btnNovaSirovina.UseVisualStyleBackColor = true;
+            this.btnNovaSirovina.Visible = false;
+            this.btnNovaSirovina.Click += new System.EventHandler(this.btnNovaSirovina_Click);
+            // 
             // btnOdustani
             // 
-            this.btnOdustani.Location = new System.Drawing.Point(576, 19);
+            this.btnOdustani.Location = new System.Drawing.Point(488, 19);
             this.btnOdustani.Name = "btnOdustani";
-            this.btnOdustani.Size = new System.Drawing.Size(75, 23);
+            this.btnOdustani.Size = new System.Drawing.Size(90, 23);
             this.btnOdustani.TabIndex = 1;
             this.btnOdustani.Text = "Odustani";
             this.btnOdustani.UseVisualStyleBackColor = true;
@@ -135,7 +194,7 @@
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(6, 19);
+            this.btnSacuvaj.Location = new System.Drawing.Point(12, 19);
             this.btnSacuvaj.Name = "btnSacuvaj";
             this.btnSacuvaj.Size = new System.Drawing.Size(75, 23);
             this.btnSacuvaj.TabIndex = 0;
@@ -147,9 +206,9 @@
             // 
             this.groupBox3.Controls.Add(this.dgvVrednosti);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(0, 138);
+            this.groupBox3.Location = new System.Drawing.Point(0, 163);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(663, 308);
+            this.groupBox3.Size = new System.Drawing.Size(584, 283);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Vrednosti";
@@ -157,19 +216,51 @@
             // dgvVrednosti
             // 
             this.dgvVrednosti.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvVrednosti.Location = new System.Drawing.Point(12, 19);
+            this.dgvVrednosti.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvVrednosti.Location = new System.Drawing.Point(3, 16);
             this.dgvVrednosti.Name = "dgvVrednosti";
-            this.dgvVrednosti.Size = new System.Drawing.Size(639, 283);
+            this.dgvVrednosti.Size = new System.Drawing.Size(578, 264);
             this.dgvVrednosti.TabIndex = 0;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnNew});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(584, 25);
+            this.toolStrip1.TabIndex = 9;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btnNew
+            // 
+            this.btnNew.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnNew.Image = ((System.Drawing.Image)(resources.GetObject("btnNew.Image")));
+            this.btnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(23, 22);
+            this.btnNew.Text = "Nova sirovina";
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
+            // 
+            // chkIsActive
+            // 
+            this.chkIsActive.AutoSize = true;
+            this.chkIsActive.Location = new System.Drawing.Point(432, 101);
+            this.chkIsActive.Name = "chkIsActive";
+            this.chkIsActive.Size = new System.Drawing.Size(101, 17);
+            this.chkIsActive.TabIndex = 11;
+            this.chkIsActive.Text = "Aktivna sirovina";
+            this.chkIsActive.UseVisualStyleBackColor = true;
             // 
             // SirovinaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 509);
+            this.ClientSize = new System.Drawing.Size(584, 509);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.toolStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "SirovinaForm";
@@ -181,7 +272,10 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVrednosti)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -199,5 +293,13 @@
         private System.Windows.Forms.Button btnSacuvaj;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvVrednosti;
+        private System.Windows.Forms.Button btnNovaSirovina;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btnNew;
+        private System.Windows.Forms.TextBox txtKolicinskiOdnos;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtCena;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox chkIsActive;
     }
 }
